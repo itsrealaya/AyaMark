@@ -36,7 +36,7 @@ const timer = setInterval(() => {
             setTimeout(() => {
 
                 window.location.href =
-                "https://zyo.lol/nhuaobuddy";
+                "https://AyaMark.zyo.lol/";
 
             },400);
 
