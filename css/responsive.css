@@ -1,0 +1,56 @@
+/* ==========================================
+   AyaMark v1.0
+   Responsive
+========================================== */
+
+@media (max-width:768px){
+
+.profile{
+
+    padding:22px;
+
+}
+
+.avatar{
+
+    width:110px;
+    height:110px;
+
+}
+
+.musicPlayer{
+
+    padding:18px;
+
+}
+
+.controls button{
+
+    width:50px;
+    height:50px;
+
+}
+
+}
+
+@media (max-width:430px){
+
+.profile h2{
+
+    font-size:28px;
+
+}
+
+.btn{
+
+    padding:14px;
+
+}
+
+.musicInfo h3{
+
+    font-size:18px;
+
+}
+
+}
