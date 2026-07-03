@@ -1,0 +1,53 @@
+/* ==========================================
+   AyaMark v1.0
+   Themes
+========================================== */
+
+/* Default */
+
+:root{
+
+    --primary:#ff3b6b;
+    --secondary:#ff84b2;
+
+    --background:#080808;
+
+}
+
+/* Purple */
+
+body.theme-purple{
+
+    --primary:#9d4dff;
+    --secondary:#c48dff;
+
+}
+
+/* Blue */
+
+body.theme-blue{
+
+    --primary:#2d9bff;
+    --secondary:#7fc9ff;
+
+}
+
+/* AMOLED */
+
+body.theme-black{
+
+    --background:#000;
+
+}
+
+/* Light */
+
+body.light{
+
+    --background:#f4f4f4;
+
+    --text:#111;
+
+    --text2:#666;
+
+}
