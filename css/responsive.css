@@ -1,55 +1,74 @@
 /* ==========================================
-   AyaMark v1.0
-   Responsive
+   AyaMark v1.0 - Responsive
 ========================================== */
 
 @media (max-width:768px){
 
-.profile{
+.profile-card{
 
-    padding:22px;
+    width:92%;
+
+    padding:24px;
 
 }
 
 .avatar{
 
-    width:110px;
-    height:110px;
+    width:120px;
+
+    height:120px;
 
 }
 
-.musicPlayer{
+.music-player{
 
-    padding:18px;
-
-}
-
-.controls button{
-
-    width:50px;
-    height:50px;
+    width:92%;
 
 }
 
 }
 
-@media (max-width:430px){
+@media (max-width:480px){
 
-.profile h2{
+.profile-name{
 
-    font-size:28px;
-
-}
-
-.btn{
-
-    padding:14px;
+    font-size:32px;
 
 }
 
-.musicInfo h3{
+.profile-job{
 
-    font-size:18px;
+    font-size:15px;
+
+}
+
+.music-title{
+
+    font-size:16px;
+
+}
+
+.music-btn{
+
+    width:44px;
+
+    height:44px;
+
+}
+
+.enter-btn{
+
+    width:100%;
+
+}
+
+}
+
+@media (min-width:1200px){
+
+.profile-card{
+
+    max-width:480px;
 
 }
 
