@@ -1,80 +1,67 @@
-/* ==========================================
-   AyaMark v1.0
-   Background
-========================================== */
+/* ===========================
+   AyaMark v1.0 - Background
+=========================== */
 
-#background{
+body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+    background:#000;
+}
+
+#bg-video{
+    position:fixed;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:-3;
+
+    transition:opacity 1s ease;
+
+    filter:
+        brightness(.45)
+        blur(1px)
+        saturate(1.2);
+}
+
+.bg-overlay{
 
     position:fixed;
 
     inset:0;
 
-    overflow:hidden;
+    background:
+        linear-gradient(
+            rgba(0,0,0,.25),
+            rgba(0,0,0,.65)
+        );
 
-    z-index:-999;
-
-}
-
-#bgVideo{
-
-    position:absolute;
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    transition:
-    opacity 1s ease,
-    transform 20s linear;
-
-    opacity:1;
-
-    transform:scale(1.05);
+    z-index:-2;
 
 }
 
-#backgroundOverlay{
+.bg-blur{
 
-    position:absolute;
+    position:fixed;
 
     inset:0;
 
-    background:
-    linear-gradient(
-        rgba(0,0,0,.35),
-        rgba(0,0,0,.65)
-    );
-
     backdrop-filter:blur(2px);
 
+    -webkit-backdrop-filter:blur(2px);
+
+    z-index:-1;
+
 }
 
-#bgVideo.fade{
-
+.fade-out{
     opacity:0;
-
 }
 
-@keyframes zoom{
-
-    from{
-
-        transform:scale(1);
-
-    }
-
-    to{
-
-        transform:scale(1.08);
-
-    }
-
-}
-
-#bgVideo{
-
-    animation:zoom 25s linear infinite alternate;
-
+.fade-in{
+    opacity:1;
 }
