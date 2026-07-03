@@ -34,9 +34,8 @@ const timer = setInterval(() => {
             loader.style.opacity = "0";
 
             setTimeout(() => {
-
-                window.location.href =
-                "https://AyaMark.zyo.lol";
+ window.location.href =
+"https://AyaMark.zyo.lol/";
 
             },400);
 
