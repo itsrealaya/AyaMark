@@ -3,52 +3,80 @@
    Settings
 ========================================== */
 
-const body = document.body;
+const body=document.body;
 
-// Theme
-const savedTheme = localStorage.getItem("theme");
+function setTheme(theme){
 
-if (savedTheme) {
-    body.classList.add(savedTheme);
-}
+body.classList.remove(
 
-function setTheme(theme) {
+"theme-purple",
 
-    body.classList.remove(
-        "theme-purple",
-        "theme-blue",
-        "theme-black",
-        "light"
-    );
+"theme-blue",
 
-    if (theme !== "default") {
-        body.classList.add(theme);
-    }
+"theme-black",
 
-    localStorage.setItem("theme", theme);
-}
+"light"
 
-// Music
+);
 
-const musicEnabled = localStorage.getItem("music");
+if(theme!=="default"){
 
-if (musicEnabled === "off") {
-
-    if (typeof audio !== "undefined") {
-        audio.pause();
-    }
+body.classList.add(theme);
 
 }
 
-// Background
+localStorage.setItem(
 
-const autoBackground =
+"theme",
+
+theme
+
+);
+
+}
+
+const saved=
+
+localStorage.getItem("theme");
+
+if(saved){
+
+setTheme(saved);
+
+}
+
+/* Music */
+
+const music=
+
+localStorage.getItem("music");
+
+if(music==="off"){
+
+if(window.audio){
+
+audio.pause();
+
+}
+
+}
+
+/* Background */
+
+const bg=
+
 localStorage.getItem("background");
 
-if (autoBackground === "off") {
+if(bg==="off"){
 
-    if (typeof bgVideo !== "undefined") {
-        bgVideo.pause();
-    }
+const v=
+
+document.getElementById("bgVideo");
+
+if(v){
+
+v.pause();
+
+}
 
 }
