@@ -36,7 +36,7 @@ const timer = setInterval(() => {
             setTimeout(() => {
 
                 window.location.href =
-                "https://AyaMark.zyo.lol/";
+                "https://AyaMark.zyo.lol";
 
             },400);
 
