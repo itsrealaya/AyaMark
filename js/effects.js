@@ -1,72 +1,78 @@
 /* ==========================================
    AyaMark v1.0
-   Sakura Effect
+   Effects
 ========================================== */
 
-const canvas = document.getElementById("sakura");
-const ctx = canvas.getContext("2d");
+const canvas=document.getElementById("sakura");
+
+if(canvas){
+
+const ctx=canvas.getContext("2d");
 
 function resize(){
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+canvas.width=window.innerWidth;
+
+canvas.height=window.innerHeight;
 
 }
-
-window.addEventListener("resize", resize);
 
 resize();
 
-const petals = [];
+window.addEventListener("resize",resize);
 
-for(let i=0;i<40;i++){
+const petals=[];
 
-    petals.push({
+for(let i=0;i<45;i++){
 
-        x:Math.random()*canvas.width,
+petals.push({
 
-        y:Math.random()*canvas.height,
+x:Math.random()*canvas.width,
 
-        r:2+Math.random()*4,
+y:Math.random()*canvas.height,
 
-        s:1+Math.random()*2,
+r:2+Math.random()*4,
 
-        w:Math.random()*2
+vy:1+Math.random()*2,
 
-    });
+vx:(Math.random()-.5),
 
-}
-
-function draw(){
-
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    petals.forEach(p=>{
-
-        ctx.beginPath();
-
-        ctx.fillStyle="rgba(255,180,210,.85)";
-
-        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-
-        ctx.fill();
-
-        p.y+=p.s;
-
-        p.x+=Math.sin(p.y*.01)*p.w;
-
-        if(p.y>canvas.height){
-
-            p.y=-10;
-
-            p.x=Math.random()*canvas.width;
-
-        }
-
-    });
-
-    requestAnimationFrame(draw);
+});
 
 }
 
-draw();
+function render(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+petals.forEach(p=>{
+
+ctx.beginPath();
+
+ctx.fillStyle="rgba(255,185,210,.85)";
+
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+
+ctx.fill();
+
+p.y+=p.vy;
+
+p.x+=p.vx;
+
+if(p.y>canvas.height){
+
+p.y=-10;
+
+p.x=Math.random()*canvas.width;
+
+}
+
+});
+
+requestAnimationFrame(render);
+
+}
+
+render();
+
+}
