@@ -1,9 +1,8 @@
 /* ==========================================
-   AyaMark v1.0
-   Effects
+   AyaMark v1.0 - Effects
 ========================================== */
 
-/* Canvas hiệu ứng */
+/* Sakura Canvas */
 
 #sakura{
 
@@ -17,7 +16,7 @@
 
     pointer-events:none;
 
-    z-index:5;
+    z-index:2;
 
 }
 
@@ -26,13 +25,12 @@
 .glow{
 
     box-shadow:
-    0 0 10px rgba(255,80,140,.35),
-    0 0 25px rgba(255,80,140,.25),
-    0 0 50px rgba(255,80,140,.15);
+    0 0 20px rgba(255,70,140,.35),
+    0 0 40px rgba(255,70,140,.18);
 
 }
 
-/* Float */
+/* Floating */
 
 .float{
 
@@ -80,21 +78,50 @@
 
 }
 
-/* Glow Button */
+/* Pulse */
 
-.btn{
+.pulse{
 
-    transition:
-    .25s transform,
-    .25s box-shadow;
+    animation:pulse 2s infinite;
 
 }
 
-.btn:hover{
+@keyframes pulse{
 
-    transform:translateY(-3px);
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* Glass Hover */
+
+.glass-hover{
+
+    transition:.25s;
+
+}
+
+.glass-hover:hover{
+
+    transform:translateY(-4px);
 
     box-shadow:
-    0 0 18px rgba(255,90,150,.45);
+
+    0 0 30px rgba(255,80,140,.35);
 
 }
