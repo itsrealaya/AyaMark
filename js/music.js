@@ -1,111 +1,42 @@
 /* ==========================================
-   AyaMark v1.0
-   Music Player
+   AyaMark v1.0 - Music
 ========================================== */
 
-const audio = document.getElementById("audio");
-
+const music = document.getElementById("music");
 const playBtn = document.getElementById("play");
-const prevBtn = document.getElementById("prev");
-const nextBtn = document.getElementById("next");
+const enterBtn = document.getElementById("enterBtn");
 
-const progress = document.getElementById("progressBar");
+// Âm lượng mặc định
+music.volume = 0.4;
 
-const playlist = [
-    "assets/music/songs/song1.mp3",
-    "assets/music/songs/song2.mp3",
-    "assets/music/songs/song3.mp3"
-];
+// Phát nhạc sau khi bấm Enter
+enterBtn.addEventListener("click", async () => {
+    try {
+        await music.play();
 
-let current = 0;
-let playing = false;
-
-function loadSong(index){
-
-    audio.src = playlist[index];
-
-}
-
-function playSong(){
-
-    audio.play();
-
-    playing = true;
-
-    playBtn.innerHTML = "⏸";
-
-}
-
-function pauseSong(){
-
-    audio.pause();
-
-    playing = false;
-
-    playBtn.innerHTML = "▶";
-
-}
-
-playBtn.addEventListener("click",()=>{
-
-    if(playing){
-
-        pauseSong();
-
-    }else{
-
-        playSong();
-
+        if (playBtn) {
+            playBtn.textContent = "⏸";
+        }
+    } catch (err) {
+        console.log("Không thể phát nhạc:", err);
     }
-
 });
 
-nextBtn.addEventListener("click",()=>{
+// Nút Play/Pause
+if (playBtn) {
+    playBtn.addEventListener("click", async () => {
 
-    current++;
+        if (music.paused) {
 
-    if(current>=playlist.length){
+            await music.play();
+            playBtn.textContent = "⏸";
 
-        current=0;
+        } else {
 
-    }
+            music.pause();
+            playBtn.textContent = "▶";
 
-    loadSong(current);
+        }
 
-    playSong();
-
-});
-
-prevBtn.addEventListener("click",()=>{
-
-    current--;
-
-    if(current<0){
-
-        current=playlist.length-1;
-
-    }
-
-    loadSong(current);
-
-    playSong();
-
-});
-
-audio.addEventListener("timeupdate",()=>{
-
-    const percent =
-
-    (audio.currentTime/audio.duration)*100;
-
-    progress.style.width = percent+"%";
-
-});
-
-audio.addEventListener("ended",()=>{
-
-    nextBtn.click();
-
-});
-
-loadSong(current);
+    });
+}
